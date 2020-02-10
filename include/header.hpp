@@ -26,14 +26,12 @@ public:
         return headStack->value;
     }
     // добавляет в конец
-    void push(T&& value){
+    void push(T&& value) {
         //  чтобы не затухала rvalue ссысылс
-        if (headStack== nullptr)
-        {
+        if (headStack == nullptr) {
             StackValue<T> *temp = new StackValue<T>{std::move(value), nullptr};
             headStack = temp;
-        }
-        else
+        } else
         {
             StackValue<T> *temp = new StackValue<T>
                     {std::move(value), headStack};
