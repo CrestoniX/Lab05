@@ -37,12 +37,6 @@ add_executable(tests
   # TODO: enum your files and delete this comment
   ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
 )
-add_library(template STATIC
-        # enum your files and delete this comment
-        ${CMAKE_CURRENT_SOURCE_DIR}/include/stack.h main.cpp)
-add_library(template STATIC
-        # enum your files and delete this comment
-        ${CMAKE_CURRENT_SOURCE_DIR}/include/stacknoncopy.h main.cpp)
 
 # TODO: change template word to project name and delete this comment
 target_include_directories(template 
