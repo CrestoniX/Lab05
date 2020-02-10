@@ -3,8 +3,8 @@
 #include <gtest/gtest.h>
 
 #include "header.hpp"
-#include "include/stack.h"
-#include "include/stacknoncopy.h"
+#include "stack.h"
+#include "stacknoncopy.h"
 
 
 
