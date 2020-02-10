@@ -16,7 +16,7 @@ jobs:
         - docker run -t -v $(pwd):/var/builder/ -w /var/builder --entrypoint ./scripts/coverage.sh $DOCKER_IMAGE
     - name: "checks"
       script:
-        - docker run -t -v $(pwd):/var/builder/ -w /var/builder --entrypoint ./scripts/checks.sh $DOCKER_IMAGE
+        - docker run -v `pwd`:`pwd` -w `pwd` --cap-add=SYS_PTRACE -t rusdevops/bootstrap-cpp scripts/checks.sh
     - name: "tests"
       script:
         - docker run -t -v $(pwd):/var/builder/ -w /var/builder --entrypoint ./scripts/tests.sh $DOCKER_IMAGE
