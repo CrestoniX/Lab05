@@ -17,7 +17,6 @@ template <typename T>
 class ParentStack
 {
 public:
-
     // возвращает указатель на последний элемент
     const T& head() const {
         if (!headStack) {
@@ -29,15 +28,17 @@ public:
     // добавляет в конец
     void push(T&& value){
         //  чтобы не затухала rvalue ссысылс
-        if(headStack== nullptr) {
+        if (headStack== nullptr)
+        {
             StackValue<T> *temp = new StackValue<T>{std::move(value), nullptr};
             headStack = temp;
         }
-        else {
-            StackValue<T> *temp = new StackValue<T>{std::move(value), headStack};
+        else
+            {
+            StackValue<T> *temp = new StackValue<T>
+                    {std::move(value), headStack};
             headStack = temp;
         }
-
     }
     // убираем копирование для lvalue
     ParentStack &operator=(const ParentStack &stack) = delete;
@@ -45,7 +46,7 @@ public:
     ParentStack &operator=(ParentStack &&stack) noexcept = default;
 
 protected:
-    StackValue<T> *headStack= nullptr;
+    StackValue<T> *headStack = nullptr;
 };
 
 #endif // INCLUDE_HEADER_HPP_

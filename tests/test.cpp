@@ -5,13 +5,14 @@
 #include "header.hpp"
 #include "sources/stack.h"
 #include "sources/stacknoncopy.h"
-
+#include "stack.h"
+#include "stacknoncopy.h"
 
 
 TEST(Stack, push_test_1)
 {
     Stack<int> my_stack;
-    for (size_t index = 1; index <= 10;++index)
+    for (size_t index = 1; index <= 10; ++index)
         my_stack.push(index);
     EXPECT_EQ(my_stack.head(), 10);
 }
@@ -90,7 +91,6 @@ TEST(StackNonCopy, test1)
 }
 
 TEST(StackNonCopy, test2){
-
     StackNotCopy<int> my_stack;
 
     my_stack.push(std::move(1));
@@ -111,8 +111,8 @@ TEST(StackNonCopy, test2){
     EXPECT_EQ(my_stack.pop(), 1);
 
 
-    EXPECT_THROW(my_stack.head(),std::runtime_error);
-    EXPECT_THROW(my_stack.pop(),std::runtime_error);
+    EXPECT_THROW(my_stack.head(), std::runtime_error);
+    EXPECT_THROW(my_stack.pop(), std::runtime_error);
 }
 
 TEST(StackNonCopy, test3){
@@ -129,5 +129,4 @@ TEST(StackNonCopy, test3){
     EXPECT_EQ(my_stack.head(), second);
     EXPECT_EQ(my_stack.pop(), second);
     EXPECT_EQ(my_stack.head(), one);
-
 }
