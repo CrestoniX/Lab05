@@ -34,7 +34,7 @@ public:
             headStack = temp;
         }
         else
-            {
+        {
             StackValue<T> *temp = new StackValue<T>
                     {std::move(value), headStack};
             headStack = temp;

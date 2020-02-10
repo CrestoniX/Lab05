@@ -3,10 +3,9 @@
 #include <gtest/gtest.h>
 
 #include "header.hpp"
-#include "sources/stack.h"
-#include "sources/stacknoncopy.h"
-#include "stack.h"
-#include "stacknoncopy.h"
+#include "include/stack.h"
+#include "include/stacknoncopy.h"
+
 
 
 TEST(Stack, push_test_1)
