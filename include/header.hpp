@@ -31,8 +31,7 @@ public:
         if (headStack == nullptr) {
             StackValue<T> *temp = new StackValue<T>{std::move(value), nullptr};
             headStack = temp;
-        }
-        else {
+        } else {
             StackValue<T> *temp = new StackValue<T>
                     {std::move(value), headStack};
             headStack = temp;
